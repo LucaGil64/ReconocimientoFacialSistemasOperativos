@@ -9,9 +9,9 @@ let savedFaceDescriptor = null;
 // 1. Cargar los modelos pre-entrenados
 // Asumimos que los modelos están en una carpeta llamada "models" en la raíz del proyecto
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('./models')
 ]).then(startVideo).catch(err => {
     console.error(err);
     statusText.innerText = "Error al cargar los modelos. Revisa la consola y asegúrate de tener la carpeta /models.";
