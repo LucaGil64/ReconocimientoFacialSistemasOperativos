@@ -3,11 +3,10 @@ const btnRegister = document.getElementById('btn-register');
 const btnLogin = document.getElementById('btn-login');
 const statusText = document.getElementById('status');
 
-// Aquí guardaremos en memoria la firma biométrica del usuario registrado
+// Aca guardamos en memoria la firma biométrica del usuario registrado
 let savedFaceDescriptor = null;
 
 // 1. Cargar los modelos pre-entrenados
-// Asumimos que los modelos están en una carpeta llamada "models" en la raíz del proyecto
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
